@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS en 2025 — TYPESET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <style>
+    .code-block {
+      background-color: var(--color-inverse-bg);
+      color: var(--color-inverse-text);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.7;
+      padding: var(--sp-6);
+      margin: var(--sp-6) 0;
+      border-left: 3px solid var(--color-accent);
+      overflow-x: auto;
+      transition: background-color var(--transition-slow), color var(--transition-slow);
+    }
+    .tech-tag {
+      display: inline-block;
+      border: var(--border-width) solid var(--color-border);
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: var(--sp-1) var(--sp-3);
+      margin: var(--sp-1);
+    }
+    .tech-tags { margin: var(--sp-4) 0; }
+  </style>
+</head>
+<body data-theme="light">
+
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-meta">
+        <span class="header-date" id="live-date"></span>
+        <span class="header-issue">Vol. 01 — No. 24</span>
+      </div>
+      <div class="header-theme-toggle">
+        <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon">◑</span>
+        </button>
+      </div>
+    </div>
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title"><a href="../index.html">TYPESET</a></h1>
+      <div class="masthead-line"></div>
+    </div>
+  </header>
+
+  <a href="../index.html" class="article-back">← Retour aux articles</a>
+
+  <article>
+    <div class="article-header reveal-section">
+      <div class="article-meta">
+        <span class="article-meta-tag">Design</span>
+        <span>—</span>
+        <span>002</span>
+        <span>—</span>
+        <span>8 min de lecture</span>
+        <span>—</span>
+        <span>Marie Lefort</span>
+      </div>
+      <h2 class="article-title">CSS en 2025 : la fin de JavaScript pour les transitions</h2>
+      <p class="article-lead">Les nouvelles propriétés CSS natives changent radicalement la façon dont les développeurs conçoivent les interactions web. Panorama des fonctionnalités qui redéfinissent le métier.</p>
+      <div class="tech-tags">
+        <span class="tech-tag">Scroll-driven animations</span>
+        <span class="tech-tag">@property</span>
+        <span class="tech-tag">Container queries</span>
+        <span class="tech-tag">View transitions</span>
+        <span class="tech-tag">Anchor positioning</span>
+      </div>
+    </div>
+
+    <div class="article-body reveal-section">
+      <h2>Scroll-driven animations</h2>
+      <p>La plus grande nouveauté de ces deux dernières années : pouvoir lier une animation CSS directement à la position de scroll, sans une seule ligne de JavaScript. Ce site lui-même en est la démonstration — les sections s'animent en entrant dans la vue grâce à <code>animation-timeline: view()</code>.</p>
+
+      <div class="code-block">/* Révéler un élément au scroll — zéro JS */<br>
+.carte {<br>
+&nbsp;&nbsp;animation: apparaitre linear both;<br>
+&nbsp;&nbsp;animation-timeline: view();<br>
+&nbsp;&nbsp;animation-range: entry 0% entry 30%;<br>
+}<br><br>
+@keyframes apparaitre {<br>
+&nbsp;&nbsp;from { opacity: 0; transform: translateY(20px); }<br>
+&nbsp;&nbsp;to   { opacity: 1; transform: translateY(0); }<br>
+}
+      </div>
+
+      <h2>@property : des variables CSS animables</h2>
+      <p>Avant <code>@property</code>, les variables CSS custom ne pouvaient pas être animées — le navigateur ne savait pas leur type. Désormais, on peut déclarer qu'une variable est un <code>&lt;color&gt;</code>, un <code>&lt;length&gt;</code> ou un <code>&lt;percentage&gt;</code> et l'animer en transition.</p>
+
+      <div class="code-block">@property --couleur-fond {<br>
+&nbsp;&nbsp;syntax: '&lt;color&gt;';<br>
+&nbsp;&nbsp;inherits: false;<br>
+&nbsp;&nbsp;initial-value: #ffffff;<br>
+}<br><br>
+.element {<br>
+&nbsp;&nbsp;background: var(--couleur-fond);<br>
+&nbsp;&nbsp;transition: --couleur-fond 0.4s ease;<br>
+}<br>
+.element:hover {<br>
+&nbsp;&nbsp;--couleur-fond: #c8392b;<br>
+}
+      </div>
+
+      <h2>View Transitions API</h2>
+      <p>La View Transitions API permet d'animer les transitions entre deux états du DOM — ou même entre deux pages — avec une syntaxe minimaliste. Ce site l'utilise pour le changement de thème : <code>document.startViewTransition(() => applyTheme(next))</code>.</p>
+
+      <blockquote>
+        <p>« En 2025, écrire du JavaScript pour une simple animation de révélation au scroll, c'est comme utiliser jQuery pour centrer une div. CSS gère ça. »</p>
+      </blockquote>
+
+      <h2>Ce que ça change pour les développeurs</h2>
+      <p>Ces évolutions réduisent la dette JavaScript, améliorent les performances (pas de recalcul sur le thread principal) et simplifient la maintenance. Elles renforcent aussi la séparation des responsabilités : CSS gère la présentation, JS gère la logique.</p>
+      <p>La veille technologique ne consiste plus seulement à apprendre de nouveaux frameworks — elle exige de revisiter régulièrement ce que CSS peut faire nativement.</p>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <span>© 2025 TYPESET — Tous droits réservés</span>
+      <span>Fait avec HTML, CSS & JS vanilla</span>
+    </div>
+  </footer>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const d = document.getElementById('live-date');
+      if (d) d.textContent = new Date().toLocaleDateString('fr-FR', {weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    });
+  </script>
+</body>
+</html>

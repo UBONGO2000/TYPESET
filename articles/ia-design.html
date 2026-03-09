@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'IA tue-t-elle la créativité des designers ? — TYPESET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+</head>
+<body data-theme="light">
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-meta"><span class="header-date" id="live-date"></span><span class="header-issue">Vol. 01 — No. 24</span></div>
+      <div class="header-theme-toggle"><button class="theme-btn" id="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">◑</span></button></div>
+    </div>
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title"><a href="../index.html">TYPESET</a></h1>
+      <div class="masthead-line"></div>
+    </div>
+  </header>
+  <a href="../index.html" class="article-back">← Retour aux articles</a>
+  <article>
+    <div class="article-header reveal-section">
+      <div class="article-meta"><span class="article-meta-tag">Technologie</span><span>—</span><span>003</span><span>—</span><span>6 min</span><span>—</span><span>Thomas Roux</span></div>
+      <h2 class="article-title">L'intelligence artificielle tue-t-elle la créativité des designers ?</h2>
+      <p class="article-lead">Midjourney, Figma AI, Adobe Firefly… Les outils se multiplient mais la réflexion sur leur impact reste superficielle. Faut-il avoir peur ou s'adapter ?</p>
+    </div>
+    <div class="article-body reveal-section">
+      <h2>L'illusion de la démocratisation</h2>
+      <p>Le discours dominant est séduisant : l'IA démocratise la création visuelle. N'importe qui peut désormais générer une illustration en quelques secondes. Mais démocratiser l'accès à un outil ne démocratise pas la pensée derrière cet outil. Générer une image et concevoir une interface sont deux exercices radicalement différents.</p>
+      <p>Le design n'est pas une activité de production d'images. C'est une démarche de résolution de problèmes, ancrée dans des contraintes réelles, des utilisateurs réels, des systèmes réels. L'IA générative excelle dans le premier cas. Pour le second, les résultats restent décevants.</p>
+      <blockquote><p>« L'IA peut produire dix mille variations d'un bouton. Elle ne peut pas vous dire lequel résout le problème de votre utilisateur. »</p></blockquote>
+      <h2>Ce que Figma AI change réellement</h2>
+      <p>Les fonctionnalités IA intégrées dans Figma — auto-layout intelligent, suggestions de composants, génération de maquettes à partir de texte — accélèrent certaines phases de travail. La phase d'idéation, notamment, bénéficie d'une génération rapide de variantes à partir d'un brief.</p>
+      <p>Mais les designers expérimentés le confirment : le gain de temps sur la production est compensé par le temps passé à évaluer, corriger et justifier les propositions de l'IA. Elle déplace le travail plus qu'elle ne le supprime.</p>
+      <h2>Le risque de convergence esthétique</h2>
+      <p>Le vrai danger n'est pas le chômage des designers. C'est l'homogénéisation visuelle. Les modèles génératifs sont entraînés sur les données existantes — ils reproduisent et amplifient les tendances dominantes. Un monde où tout le monde utilise les mêmes outils génère des outputs de plus en plus similaires.</p>
+      <p>La bonne posture n'est ni la résistance totale ni l'adoption aveugle. Les designers qui prospèrent utilisent l'IA comme un outil parmi d'autres, en gardant une conscience claire de ce qu'elle ne peut pas faire : comprendre le contexte, défendre une décision en réunion, empathiser avec un utilisateur frustré.</p>
+    </div>
+  </article>
+  <footer class="site-footer"><div class="footer-bottom"><span>© 2025 TYPESET</span><span>Fait avec HTML, CSS & JS vanilla</span></div></footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){var d=document.getElementById('live-date');if(d)d.textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});});</script>
+</body>
+</html>

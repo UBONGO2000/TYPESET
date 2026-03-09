@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le design brutaliste est-il l'avenir ? — TYPESET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+</head>
+<body data-theme="light">
+
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-meta">
+        <span class="header-date" id="live-date"></span>
+        <span class="header-issue">Vol. 01 — No. 24</span>
+      </div>
+      <div class="header-theme-toggle">
+        <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon">◑</span>
+        </button>
+      </div>
+    </div>
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title"><a href="../index.html">TYPESET</a></h1>
+      <div class="masthead-line"></div>
+    </div>
+  </header>
+
+  <a href="../index.html" class="article-back">← Retour aux articles</a>
+
+  <article>
+    <div class="article-header reveal-section">
+      <div class="article-meta">
+        <span class="article-meta-tag">Design</span>
+        <span>—</span>
+        <span>001</span>
+        <span>—</span>
+        <span>12 min de lecture</span>
+        <span>—</span>
+        <span>Georges Ntchanga</span>
+      </div>
+      <h2 class="article-title">Le design brutaliste est-il l'avenir&nbsp;?</h2>
+      <p class="article-lead">Dans un monde saturé d'interfaces lisses et prévisibles, le mouvement brutaliste revendique la laideur comme esthétique. Mais est-ce vraiment une révolution ou une simple nostalgie ?</p>
+    </div>
+
+    <div class="article-body reveal-section">
+      <h2>Qu'est-ce que le brutalisme web ?</h2>
+      <p>Le brutalisme architectural, né dans les années 1950, valorisait les matériaux bruts, le béton apparent, les structures sans fard. Son pendant numérique reprend cette philosophie : des interfaces sans enjolivures, avec des polices système, des bordures noires épaisses, des contrastes extrêmes.</p>
+      <p>Des sites comme Craigslist, Hacker News ou l'ancien Bloomberg.com incarnent involontairement ce mouvement. Aujourd'hui, des designers le revendiquent volontairement : liner.app, are.na, certains portfolios de studios créatifs.</p>
+
+      <blockquote>
+        <p>« La beauté n'est pas l'objectif du design. L'efficacité, oui. Et parfois, l'honnêteté structurelle est plus belle que n'importe quel vernis. »</p>
+      </blockquote>
+
+      <h2>Une réaction contre la standardisation</h2>
+      <p>Le design numérique des années 2010 a convergé vers un canon unique : cards arrondies, ombres douces, couleurs pastel, typographies sans-serif propres. Figma et les design systems ont accéléré cette homogénéisation. Le brutalisme est une réaction viscérale à cette uniformité.</p>
+      <p>Il dit : regardez les contraintes, regardez la grille, regardez les liens bleus soulignés. Il y a une honnêteté dans cette approche que le skeuomorphisme poli masquait.</p>
+
+      <h2>Les limites du mouvement</h2>
+      <p>Mais le brutalisme a ses propres écueils. Mal exécuté, il devient simplement négligé — et la négligence n'est pas un parti pris esthétique, c'est de la paresse. Le vrai brutalisme exige autant de rigueur qu'un design "classique" : chaque choix doit être intentionnel.</p>
+      <p>L'accessibilité pose aussi problème : contrastes parfois trop violents, hiérarchies confuses, lisibilité sacrifiée sur l'autel de l'esthétique.</p>
+
+      <h2>Et en 2025 ?</h2>
+      <p>Le brutalisme s'est institutionnalisé. Ce qui était subversif est devenu tendance sur Dribbble. Les grandes marques l'adoptent pour paraître "indie". Le paradoxe est total : le mouvement contre l'uniformité est devenu uniforme.</p>
+      <p>La vraie veille technologique ne consiste pas à adopter le brutalisme ou à le rejeter, mais à comprendre pourquoi il émerge — et à faire des choix esthétiques conscients, quelle que soit la direction.</p>
+    </div>
+  </article>
+
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <span>© 2025 TYPESET — Tous droits réservés</span>
+      <span>Fait avec HTML, CSS & JS vanilla</span>
+    </div>
+  </footer>
+
+  <script src="../js/theme.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const d = document.getElementById('live-date');
+      if (d) d.textContent = new Date().toLocaleDateString('fr-FR', {weekday:'long',year:'numeric',month:'long',day:'numeric'});
+    });
+  </script>
+</body>
+</html>

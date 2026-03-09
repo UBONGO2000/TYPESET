@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TYPESET — Magazine Éditorial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body data-theme="light">
+
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+    <div class="header-top">
+      <div class="header-meta">
+        <span class="header-date" id="live-date"></span>
+        <span class="header-issue">Vol. 01 — No. 24</span>
+      </div>
+      <div class="header-theme-toggle">
+        <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">
+          <span class="theme-icon">◑</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title">TYPESET</h1>
+      <div class="masthead-line"></div>
+    </div>
+
+    <nav class="header-nav">
+      <ul class="nav-list">
+        <li><a href="#" class="nav-link active" data-filter="all">Tout</a></li>
+        <li><a href="#" class="nav-link" data-filter="design">Design</a></li>
+        <li><a href="#" class="nav-link" data-filter="tech">Technologie</a></li>
+        <li><a href="#" class="nav-link" data-filter="culture">Culture</a></li>
+        <li><a href="#" class="nav-link" data-filter="essai">Essai</a></li>
+      </ul>
+      <div class="nav-search">
+        <input type="text" id="search-input" placeholder="Rechercher…" class="search-field" />
+        <span class="search-icon">↗</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero reveal-section">
+    <div class="hero-number">001</div>
+    <div class="hero-content">
+      <div class="hero-tag">— À la une</div>
+      <h2 class="hero-title">
+        <span class="hero-title-line">Le design</span>
+        <span class="hero-title-line italic">brutaliste</span>
+        <span class="hero-title-line">est-il</span>
+        <span class="hero-title-line accent">l'avenir ?</span>
+      </h2>
+      <div class="hero-body">
+        <p>Dans un monde saturé d'interfaces lisses et prévisibles, le mouvement brutaliste revendique la laideur comme esthétique. Mais est-ce vraiment une révolution ou une simple nostalgie ?</p>
+        <a href="articles/brutalisme.html" class="btn-read">Lire l'article <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <div class="hero-image-block">
+      <div class="hero-image-inner">
+        <div class="hero-big-letter">B</div>
+      </div>
+      <div class="hero-caption">Photo : Studio Noir, 2025</div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track" id="ticker">
+      <span>DESIGN · TYPOGRAPHIE · INTERFACES · CSS 2025 · BRUTALISME · ÉDITORIAL · SCROLL-DRIVEN · VARIABLE FONTS · CONTAINER QUERIES · MOTION UI ·&nbsp;</span>
+      <span aria-hidden="true">DESIGN · TYPOGRAPHIE · INTERFACES · CSS 2025 · BRUTALISME · ÉDITORIAL · SCROLL-DRIVEN · VARIABLE FONTS · CONTAINER QUERIES · MOTION UI ·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- GRID ARTICLES -->
+  <main class="articles-grid" id="articles-grid">
+
+    <article class="card card--large reveal-section" data-category="design">
+      <a href="articles/css2025.html" class="card-link">
+        <div class="card-index">002</div>
+        <div class="card-visual card-visual--striped">
+          <span class="card-visual-text">CSS</span>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">Design</span>
+          <h3 class="card-title">CSS en 2025 : scroll-driven animations et la fin de JavaScript pour les transitions</h3>
+          <p class="card-excerpt">Les nouvelles propriétés CSS natives changent radicalement la façon dont les développeurs conçoivent les interactions web.</p>
+          <div class="card-footer">
+            <span class="card-author">Marie Lefort</span>
+            <span class="card-time">8 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="card card--medium reveal-section" data-category="tech">
+      <a href="articles/ia-design.html" class="card-link">
+        <div class="card-index">003</div>
+        <div class="card-visual card-visual--grid">
+          <span class="card-visual-text">IA</span>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">Technologie</span>
+          <h3 class="card-title">L'intelligence artificielle tue-t-elle la créativité des designers ?</h3>
+          <p class="card-excerpt">Midjourney, Figma AI, Adobe Firefly… Les outils se multiplient mais la réflexion sur leur impact reste superficielle.</p>
+          <div class="card-footer">
+            <span class="card-author">Thomas Roux</span>
+            <span class="card-time">6 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="card card--small reveal-section" data-category="culture">
+      <a href="articles/typographie.html" class="card-link">
+        <div class="card-index">004</div>
+        <div class="card-content">
+          <span class="card-tag">Culture</span>
+          <h3 class="card-title">La typographie comme langage politique</h3>
+          <p class="card-excerpt">Des affiches de mai 68 aux tweets de Trump, la police choisie n'est jamais neutre.</p>
+          <div class="card-footer">
+            <span class="card-author">Sarah Dubois</span>
+            <span class="card-time">4 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="card card--small reveal-section" data-category="essai">
+      <a href="articles/minimalisme.html" class="card-link">
+        <div class="card-index">005</div>
+        <div class="card-content">
+          <span class="card-tag">Essai</span>
+          <h3 class="card-title">Minimalisme numérique : éloge de la contrainte</h3>
+          <p class="card-excerpt">Quand faire moins devient le plus grand défi créatif de notre époque.</p>
+          <div class="card-footer">
+            <span class="card-author">Lucas Martin</span>
+            <span class="card-time">5 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="card card--featured reveal-section" data-category="design">
+      <a href="articles/variable-fonts.html" class="card-link">
+        <div class="card-index">006</div>
+        <div class="card-visual card-visual--bold">
+          <span class="card-visual-text variable-demo">Aa</span>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">Design</span>
+          <h3 class="card-title">Variable Fonts : la typographie enfin vivante</h3>
+          <p class="card-excerpt">Un seul fichier, mille variations. Les polices variables redéfinissent l'expression typographique sur le web.</p>
+          <div class="card-footer">
+            <span class="card-author">Emma Pascal</span>
+            <span class="card-time">7 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="card card--medium reveal-section" data-category="tech">
+      <a href="articles/container-queries.html" class="card-link">
+        <div class="card-index">007</div>
+        <div class="card-visual card-visual--dots">
+          <span class="card-visual-text">@CQ</span>
+        </div>
+        <div class="card-content">
+          <span class="card-tag">Technologie</span>
+          <h3 class="card-title">Container Queries : le responsive design enfin mature</h3>
+          <p class="card-excerpt">Fini les media queries globales. Les container queries permettent enfin aux composants de s'adapter à leur contexte propre.</p>
+          <div class="card-footer">
+            <span class="card-author">Karim Benz</span>
+            <span class="card-time">5 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="card card--small reveal-section" data-category="culture">
+      <a href="articles/web-nostalgie.html" class="card-link">
+        <div class="card-index">008</div>
+        <div class="card-content">
+          <span class="card-tag">Culture</span>
+          <h3 class="card-title">Le web des années 2000 revient et c'est voulu</h3>
+          <p class="card-excerpt">La nostalgie esthétique du web primitif s'impose comme tendance dans les portfolios des jeunes créatifs.</p>
+          <div class="card-footer">
+            <span class="card-author">Nina Voss</span>
+            <span class="card-time">3 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+    <article class="card card--small reveal-section" data-category="essai">
+      <a href="articles/dark-patterns.html" class="card-link">
+        <div class="card-index">009</div>
+        <div class="card-content">
+          <span class="card-tag">Essai</span>
+          <h3 class="card-title">Dark patterns : le design qui nous manipule</h3>
+          <p class="card-excerpt">Les interfaces conçues pour tromper prolifèrent. Une analyse critique des pratiques qui abusent de la confiance.</p>
+          <div class="card-footer">
+            <span class="card-author">Paul Girard</span>
+            <span class="card-time">9 min</span>
+          </div>
+        </div>
+      </a>
+    </article>
+
+  </main>
+
+  <!-- NO RESULTS -->
+  <div class="no-results hidden" id="no-results">
+    <p>Aucun article trouvé.</p>
+  </div>
+
+  <!-- DIVIDER MARQUEE -->
+  <div class="section-divider">
+    <span class="divider-label">— Sélection de la rédaction</span>
+  </div>
+
+  <!-- FEATURED ROW -->
+  <section class="featured-row reveal-section">
+    <article class="featured-item" data-category="design">
+      <a href="articles/motion-ui.html">
+        <span class="featured-num">010</span>
+        <span class="featured-tag">Design</span>
+        <h4 class="featured-title">Motion UI sans JavaScript : le futur est déjà là</h4>
+        <span class="featured-arrow">→</span>
+      </a>
+    </article>
+    <article class="featured-item" data-category="tech">
+      <a href="articles/web-components.html">
+        <span class="featured-num">011</span>
+        <span class="featured-tag">Tech</span>
+        <h4 class="featured-title">Web Components en 2025 : le retour en grâce</h4>
+        <span class="featured-arrow">→</span>
+      </a>
+    </article>
+    <article class="featured-item" data-category="culture">
+      <a href="articles/open-source-design.html">
+        <span class="featured-num">012</span>
+        <span class="featured-tag">Culture</span>
+        <h4 class="featured-title">Open source et design : une histoire d'amour compliquée</h4>
+        <span class="featured-arrow">→</span>
+      </a>
+    </article>
+    <article class="featured-item" data-category="essai">
+      <a href="articles/accessibilite.html">
+        <span class="featured-num">013</span>
+        <span class="featured-tag">Essai</span>
+        <h4 class="featured-title">L'accessibilité n'est pas une option, c'est un droit</h4>
+        <span class="featured-arrow">→</span>
+      </a>
+    </article>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="footer-title">TYPESET</span>
+        <p class="footer-desc">Un magazine éditorial indépendant sur le design, la technologie et la culture numérique.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-title">Rubriques</span>
+          <a href="#">Design</a>
+          <a href="#">Technologie</a>
+          <a href="#">Culture</a>
+          <a href="#">Essai</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">À propos</span>
+          <a href="#">La rédaction</a>
+          <a href="#">Contribuer</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 TYPESET — Tous droits réservés</span>
+      <span>Fait avec HTML, CSS & JS vanilla</span>
+    </div>
+  </footer>
+
+  <script src="js/theme.js" defer></script>
+  <script src="js/filter.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/ticker.js" defer></script>
+</body>
+</html>

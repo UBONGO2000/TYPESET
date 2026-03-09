@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motion UI sans JavaScript — TYPESET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <style>
+    .code-block {
+      background-color: var(--color-inverse-bg);
+      color: var(--color-inverse-text);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.7;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 3px solid var(--color-accent);
+      overflow-x: auto;
+      transition: background-color var(--transition-slow), color var(--transition-slow);
+    }
+    .demo-box {
+      border: 1.5px solid var(--color-border);
+      padding: 2rem;
+      margin: 1.5rem 0;
+      background: var(--color-surface);
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .demo-btn {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1.5px solid var(--color-border);
+      padding: 0.75rem 1.5rem;
+      cursor: pointer;
+      color: var(--color-text);
+      background: var(--color-bg);
+      position: relative;
+      overflow: hidden;
+      transition: color 0.3s;
+    }
+    .demo-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--color-text);
+      transform: translateX(-101%);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .demo-btn:hover::before { transform: translateX(0); }
+    .demo-btn:hover { color: var(--color-bg); }
+    .demo-btn span { position: relative; z-index: 1; }
+    .demo-label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--color-text-faint);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-meta"><span class="header-date" id="live-date"></span><span class="header-issue">Vol. 01 — No. 24</span></div>
+      <div class="header-theme-toggle"><button class="theme-btn" id="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">◑</span></button></div>
+    </div>
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title"><a href="../index.html">TYPESET</a></h1>
+      <div class="masthead-line"></div>
+    </div>
+  </header>
+  <a href="../index.html" class="article-back">← Retour aux articles</a>
+  <article>
+    <div class="article-header reveal-section">
+      <div class="article-meta"><span class="article-meta-tag">Design</span><span>—</span><span>010</span><span>—</span><span>6 min</span><span>—</span><span>Emma Pascal</span></div>
+      <h2 class="article-title">Motion UI sans JavaScript : le futur est déjà là</h2>
+      <p class="article-lead">CSS 2025 permet des animations sophistiquées sans une seule ligne de JavaScript. Démonstrations interactives et guide pratique pour adopter ces nouvelles capacités.</p>
+    </div>
+    <div class="article-body reveal-section">
+      <h2>Pourquoi supprimer JS des animations ?</h2>
+      <p>JavaScript gère les animations sur le thread principal — le même thread qui gère les interactions utilisateur, le rendu DOM, et la logique applicative. Une animation JS qui tourne en même temps qu'un scroll peut provoquer des drops de framerate perceptibles. CSS, lui, peut déléguer certaines animations au GPU via des propriétés composées (<code>transform</code>, <code>opacity</code>).</p>
+      <p>Le résultat est mesurable : les animations CSS sont systématiquement plus fluides que leurs équivalents JS sur des appareils à performances modestes.</p>
+
+      <div class="demo-box">
+        <button class="demo-btn"><span>Survole-moi</span></button>
+        <p class="demo-label">↑ Démo : wipe-reveal 100% CSS, aucun JS</p>
+      </div>
+
+      <h2>Les 4 nouvelles armes de CSS Motion</h2>
+      <p>Scroll-driven animations (lier une animation au scroll), View Transitions (transitions entre états DOM ou pages), @starting-style (animer l'apparition d'un élément depuis display:none), et l'interpolation de <code>font-variation-settings</code> constituent le quatuor qui rend JS largement superflu pour les interactions courantes.</p>
+
+      <div class="code-block">/* @starting-style : animer depuis display:none — CSS pur */<br>
+.menu {<br>
+&nbsp;&nbsp;transition: opacity 0.3s, transform 0.3s;<br>
+&nbsp;&nbsp;opacity: 1;<br>
+&nbsp;&nbsp;transform: translateY(0);<br>
+}<br><br>
+@starting-style {<br>
+&nbsp;&nbsp;.menu {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;opacity: 0;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;transform: translateY(-8px);<br>
+&nbsp;&nbsp;}<br>
+}
+      </div>
+
+      <blockquote><p>« @starting-style est peut-être la fonctionnalité CSS la plus sous-estimée de 2024. Elle résout un problème que les développeurs contournaient avec JS depuis vingt ans. »</p></blockquote>
+
+      <h2>Ce que JS garde encore</h2>
+      <p>Soyons honnêtes : JS reste nécessaire pour les animations pilotées par des données (graphiques temps réel, physics-based animations complexes), les gestes tactiles avancés (pinch-to-zoom, swipe avec momentum), et la synchronisation d'animations avec des événements métier.</p>
+      <p>Mais pour les transitions d'interface, les micro-interactions, les révélations au scroll et les transitions de navigation — CSS 2025 suffit largement. Et c'est un choix de professionnel que de l'utiliser.</p>
+    </div>
+  </article>
+  <footer class="site-footer"><div class="footer-bottom"><span>© 2025 TYPESET</span><span>Fait avec HTML, CSS & JS vanilla</span></div></footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){var d=document.getElementById('live-date');if(d)d.textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});});</script>
+</body>
+</html>

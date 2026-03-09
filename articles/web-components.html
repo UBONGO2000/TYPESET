@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Components en 2025 — TYPESET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <style>
+    .code-block {
+      background-color: var(--color-inverse-bg);
+      color: var(--color-inverse-text);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.7;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 3px solid var(--color-accent);
+      overflow-x: auto;
+      transition: background-color var(--transition-slow), color var(--transition-slow);
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-meta"><span class="header-date" id="live-date"></span><span class="header-issue">Vol. 01 — No. 24</span></div>
+      <div class="header-theme-toggle"><button class="theme-btn" id="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">◑</span></button></div>
+    </div>
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title"><a href="../index.html">TYPESET</a></h1>
+      <div class="masthead-line"></div>
+    </div>
+  </header>
+  <a href="../index.html" class="article-back">← Retour aux articles</a>
+  <article>
+    <div class="article-header reveal-section">
+      <div class="article-meta"><span class="article-meta-tag">Technologie</span><span>—</span><span>011</span><span>—</span><span>5 min</span><span>—</span><span>Karim Benz</span></div>
+      <h2 class="article-title">Web Components en 2025 : le retour en grâce</h2>
+      <p class="article-lead">Promis depuis des années, pratiquement abandonnés, les Web Components connaissent un regain d'intérêt inattendu. Pourquoi maintenant, et faut-il y croire ?</p>
+    </div>
+    <div class="article-body reveal-section">
+      <h2>Une longue traversée du désert</h2>
+      <p>Les Web Components — Custom Elements, Shadow DOM, HTML Templates — ont été spécifiés dès 2011. Pendant une décennie, ils ont traîné une réputation de technologie trop complexe, mal supportée, et supplantée par des frameworks plus ergonomiques comme React ou Vue.</p>
+      <p>En 2025, ce tableau a changé. Le support navigateur est universel. Les Declarative Shadow DOM simplifient le rendu côté serveur. Et surtout, la fatigue des frameworks pousse les développeurs à réévaluer ce que la plateforme web offre nativement.</p>
+
+      <div class="code-block">/* Un Web Component minimal — Custom Element */<br>
+class TypesetBadge extends HTMLElement {<br>
+&nbsp;&nbsp;connectedCallback() {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;const label = this.getAttribute('label') || 'Tag';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;this.innerHTML = `<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="badge"&gt;${label}&lt;/span&gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;`;<br>
+&nbsp;&nbsp;}<br>
+}<br>
+customElements.define('ts-badge', TypesetBadge);<br><br>
+/* Utilisation dans le HTML */<br>
+&lt;ts-badge label="Design"&gt;&lt;/ts-badge&gt;
+      </div>
+
+      <h2>Declarative Shadow DOM : le changement clé</h2>
+      <p>Le Shadow DOM était le principal frein à l'adoption côté serveur — impossible à rendre en HTML statique. Le Declarative Shadow DOM résout ce problème : on peut désormais définir le shadow DOM directement dans le HTML, sans JavaScript, ce qui le rend compatible avec le Server-Side Rendering.</p>
+      <blockquote><p>« Les Web Components ne vont pas remplacer React. Mais pour les design systems, les bibliothèques de composants transversaux et le code long terme, ils offrent quelque chose qu'aucun framework ne peut donner : la pérennité. »</p></blockquote>
+      <h2>Cas d'usage pertinents en 2025</h2>
+      <p>Les Web Components brillent dans des cas précis : design systems partagés entre plusieurs stacks (une même bibliothèque de composants utilisable dans React, Vue, Angular ou vanilla), widgets embarqués dans des pages tierces, et composants très stables qui ne doivent pas dépendre du cycle de vie d'un framework.</p>
+      <p>Pour une SPA complexe avec des interactions riches ? React ou Vue gardent leurs avantages. Pour une équipe pluristack qui veut capitaliser sur un seul design system ? Les Web Components sont maintenant un choix sérieux.</p>
+    </div>
+  </article>
+  <footer class="site-footer"><div class="footer-bottom"><span>© 2025 TYPESET</span><span>Fait avec HTML, CSS & JS vanilla</span></div></footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){var d=document.getElementById('live-date');if(d)d.textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});});</script>
+</body>
+</html>

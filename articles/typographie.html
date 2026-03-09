@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La typographie comme langage politique — TYPESET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+</head>
+<body data-theme="light">
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-meta"><span class="header-date" id="live-date"></span><span class="header-issue">Vol. 01 — No. 24</span></div>
+      <div class="header-theme-toggle"><button class="theme-btn" id="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">◑</span></button></div>
+    </div>
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title"><a href="../index.html">TYPESET</a></h1>
+      <div class="masthead-line"></div>
+    </div>
+  </header>
+  <a href="../index.html" class="article-back">← Retour aux articles</a>
+  <article>
+    <div class="article-header reveal-section">
+      <div class="article-meta"><span class="article-meta-tag">Culture</span><span>—</span><span>004</span><span>—</span><span>4 min</span><span>—</span><span>Sarah Dubois</span></div>
+      <h2 class="article-title">La typographie comme langage politique</h2>
+      <p class="article-lead">Des affiches de mai 68 aux tweets de Trump, la police choisie n'est jamais neutre. Décryptage d'un langage silencieux mais puissant.</p>
+    </div>
+    <div class="article-body reveal-section">
+      <h2>Une police, un pouvoir</h2>
+      <p>En 1968, les ateliers populaires de l'École des Beaux-Arts produisent des centaines d'affiches en sérigraphie. Pas d'Helvetica propret, pas de mise en page équilibrée : du bois brut, des lettres qui tremblent, des compositions qui hurlent. La forme est le message.</p>
+      <p>La typographie est l'une des rares décisions de design que le grand public ressent sans pouvoir l'identifier. On ne dit pas "cette affiche utilise une Grotesque condensée en grasse". On dit "ça fait sérieux" ou "ça fait militant" ou "ça fait arnaque".</p>
+      <blockquote><p>« Choisir une police, c'est choisir un accent. Et comme un accent, ça trahit une origine, une appartenance, une intention. »</p></blockquote>
+      <h2>L'arme des institutions</h2>
+      <p>Les gouvernements et les grandes institutions savent ce qu'ils font. La Commission Européenne utilise une police spécialement conçue pour elle — sobre, neutre, supranationale. La BBC et Le Monde ont leurs propres familles typographiques. L'investissement est massif parce que l'enjeu l'est aussi.</p>
+      <p>À l'inverse, les mouvements populistes récents ont souvent exploité des typographies volontairement "cheap" — Comic Sans modifié, Impact, polices système non retravaillées. Non par ignorance, mais par calcul : se distinguer du "discours officiel" en adoptant son inverse esthétique.</p>
+      <h2>Le web et la neutralisation</h2>
+      <p>L'avènement du web a failli neutraliser cette dimension politique. Pendant des années, les contraintes techniques imposaient une poignée de polices "safe" — Arial, Times New Roman, Georgia. Le web ressemblait partout pareil, et la typographie comme langage de différenciation disparaissait.</p>
+      <p>Les webfonts, puis les variable fonts, ont restitué cette liberté. Aujourd'hui, chaque marque, chaque mouvement, chaque publication peut à nouveau affirmer une identité typographique forte. La question n'est plus technique. Elle est politique, au sens le plus large du terme.</p>
+    </div>
+  </article>
+  <footer class="site-footer"><div class="footer-bottom"><span>© 2025 TYPESET</span><span>Fait avec HTML, CSS & JS vanilla</span></div></footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){var d=document.getElementById('live-date');if(d)d.textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});});</script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+/* ===========================
+   ANIMATIONS — TYPESET
+   CSS moderne 2025 :
+   - Scroll-driven animations (@scroll-timeline)
+   - @property pour variables animées
+   - View transitions
+=========================== */
+
+/* ---- CUSTOM ANIMATED PROPERTIES ---- */
+@property --accent-lightness {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 40%;
+}
+
+/* ---- TICKER ---- */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---- REVEAL ON SCROLL (scroll-driven animation) ---- */
+@supports (animation-timeline: scroll()) {
+  .reveal-section {
+    animation: reveal-fade linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 25%;
+  }
+
+  @keyframes reveal-fade {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Fallback for browsers without scroll-driven animations */
+@supports not (animation-timeline: scroll()) {
+  .reveal-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1), transform 0.6s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .reveal-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- HERO ENTRANCE ---- */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-tag {
+  animation: fade-up 0.5s cubic-bezier(0.4,0,0.2,1) 0.1s both;
+}
+
+.hero-title {
+  animation: slide-in-left 0.7s cubic-bezier(0.4,0,0.2,1) 0.2s both;
+}
+
+.hero-body {
+  animation: fade-up 0.6s cubic-bezier(0.4,0,0.2,1) 0.4s both;
+}
+
+.hero-image-block {
+  animation: slide-in-right 0.7s cubic-bezier(0.4,0,0.2,1) 0.15s both;
+}
+
+.masthead-title {
+  animation: fade-up 0.5s cubic-bezier(0.4,0,0.2,1) 0s both;
+}
+
+/* ---- HEADER SCROLL SHRINK (scroll-driven) ---- */
+@supports (animation-timeline: scroll()) {
+  .site-header {
+    animation: header-shrink linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0px 120px;
+  }
+
+  @keyframes header-shrink {
+    from { box-shadow: none; }
+    to   { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+  }
+}
+
+/* ---- CARD HOVER LIFT ---- */
+.card {
+  transition: background-color var(--transition-fast), transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 var(--color-border);
+}
+
+/* ---- FEATURED ITEM HOVER ---- */
+.featured-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width var(--transition-base);
+}
+
+.featured-item:hover::after {
+  width: 100%;
+}
+
+/* ---- MASTHEAD TITLE HOVER ---- */
+.masthead-title {
+  cursor: default;
+  transition: letter-spacing var(--transition-base), color var(--transition-slow);
+}
+
+.masthead-title:hover {
+  letter-spacing: 0.35em;
+}
+
+/* ---- HERO BIG LETTER ---- */
+@keyframes letter-breathe {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.03); }
+}
+
+.hero-big-letter {
+  animation: letter-breathe 6s ease-in-out infinite;
+}
+
+/* ---- VIEW TRANSITIONS (page nav) ---- */
+@supports (view-transition-name: root) {
+  ::view-transition-old(root) {
+    animation: 250ms ease-out both fade-out-vt;
+  }
+
+  ::view-transition-new(root) {
+    animation: 350ms ease-in both fade-in-vt;
+  }
+
+  @keyframes fade-out-vt {
+    to { opacity: 0; transform: translateY(-8px); }
+  }
+
+  @keyframes fade-in-vt {
+    from { opacity: 0; transform: translateY(8px); }
+  }
+}
+
+/* ---- THEME TRANSITION OVERRIDE ---- */
+* {
+  transition-property: background-color, color, border-color, box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disable transition for motion-sensitive users */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

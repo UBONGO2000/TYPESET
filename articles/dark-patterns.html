@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dark patterns : le design qui nous manipule — TYPESET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <style>
+    .pattern-list {
+      border: 1.5px solid var(--color-border);
+      margin: 1.5rem 0;
+    }
+    .pattern-item {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .pattern-item:last-child { border-bottom: none; }
+    .pattern-num {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--color-text-faint);
+      padding-top: 0.15rem;
+    }
+    .pattern-name {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-accent);
+      margin-bottom: 0.25rem;
+    }
+    .pattern-desc {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.5;
+      color: var(--color-text-muted);
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-meta"><span class="header-date" id="live-date"></span><span class="header-issue">Vol. 01 — No. 24</span></div>
+      <div class="header-theme-toggle"><button class="theme-btn" id="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">◑</span></button></div>
+    </div>
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title"><a href="../index.html">TYPESET</a></h1>
+      <div class="masthead-line"></div>
+    </div>
+  </header>
+  <a href="../index.html" class="article-back">← Retour aux articles</a>
+  <article>
+    <div class="article-header reveal-section">
+      <div class="article-meta"><span class="article-meta-tag">Essai</span><span>—</span><span>009</span><span>—</span><span>9 min</span><span>—</span><span>Paul Girard</span></div>
+      <h2 class="article-title">Dark patterns : le design qui nous manipule</h2>
+      <p class="article-lead">Les interfaces conçues pour tromper prolifèrent. Une analyse critique des pratiques qui abusent de la confiance des utilisateurs et de la complicité silencieuse des designers.</p>
+    </div>
+    <div class="article-body reveal-section">
+      <h2>Définir le dark pattern</h2>
+      <p>Le terme a été popularisé par le designer britannique Harry Brignull en 2010. Un dark pattern est une interface délibérément conçue pour induire l'utilisateur en erreur, l'amener à faire quelque chose qu'il ne voulait pas faire, ou rendre difficile ce qu'il voulait faire. La manipulation est intentionnelle — c'est ce qui la distingue d'une simple erreur de design.</p>
+      <p>La distinction est cruciale. Un mauvais design frustre. Un dark pattern exploite. Le premier est de l'incompétence, le second est de la malhonnêteté.</p>
+
+      <div class="pattern-list">
+        <div class="pattern-item">
+          <span class="pattern-num">01</span>
+          <div><div class="pattern-name">Roach Motel</div><p class="pattern-desc">S'abonner est en un clic. Se désabonner prend dix étapes, un email, et parfois un appel téléphonique.</p></div>
+        </div>
+        <div class="pattern-item">
+          <span class="pattern-num">02</span>
+          <div><div class="pattern-name">Confirmshaming</div><p class="pattern-desc">Le bouton de refus dit "Non merci, je préfère payer plus cher." La honte comme mécanisme de conversion.</p></div>
+        </div>
+        <div class="pattern-item">
+          <span class="pattern-num">03</span>
+          <div><div class="pattern-name">Disguised Ads</div><p class="pattern-desc">Des publicités stylisées comme des résultats organiques ou des contenus éditoriaux. La confusion est le produit.</p></div>
+        </div>
+        <div class="pattern-item">
+          <span class="pattern-num">04</span>
+          <div><div class="pattern-name">Hidden Costs</div><p class="pattern-desc">Le prix affiché n'inclut pas les frais de service, de livraison, ou les taxes — révélés à la dernière étape du paiement.</p></div>
+        </div>
+        <div class="pattern-item">
+          <span class="pattern-num">05</span>
+          <div><div class="pattern-name">Privacy Zuckering</div><p class="pattern-desc">Des paramètres de confidentialité délibérément complexes et pré-cochés pour maximiser le partage de données.</p></div>
+        </div>
+      </div>
+
+      <h2>La complicité des designers</h2>
+      <p>La question inconfortable : qui conçoit ces interfaces ? Des designers, souvent diplômés, souvent conscients de ce qu'ils font. La pression économique — conversion, retention, ARPU — crée un environnement où ces pratiques sont non seulement tolérées mais parfois explicitement demandées.</p>
+      <blockquote><p>« Le designer qui exécute un dark pattern n'est pas une victime innocente du système. Il en est un acteur. La question de responsabilité professionnelle est réelle. »</p></blockquote>
+      <h2>La réponse réglementaire</h2>
+      <p>L'Union Européenne a pris le sujet au sérieux. Le Digital Services Act et le RGPD incluent des dispositions explicites contre certains dark patterns — notamment les interfaces conçues pour obtenir un consentement forcé. Les amendes peuvent être substantielles. Amazon a payé 30 millions d'euros en 2023 pour des pratiques liées à ses dark patterns d'abonnement.</p>
+      <p>La réglementation ne suffira pas à elle seule. La vraie solution est une éthique professionnelle du design, enseignée et pratiquée. Le serment d'Hippocrate du designer : d'abord, ne pas nuire à l'utilisateur.</p>
+    </div>
+  </article>
+  <footer class="site-footer"><div class="footer-bottom"><span>© 2025 TYPESET</span><span>Fait avec HTML, CSS & JS vanilla</span></div></footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){var d=document.getElementById('live-date');if(d)d.textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});});</script>
+</body>
+</html>

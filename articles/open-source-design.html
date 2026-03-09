@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open source et design — TYPESET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+</head>
+<body data-theme="light">
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-meta"><span class="header-date" id="live-date"></span><span class="header-issue">Vol. 01 — No. 24</span></div>
+      <div class="header-theme-toggle"><button class="theme-btn" id="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">◑</span></button></div>
+    </div>
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title"><a href="../index.html">TYPESET</a></h1>
+      <div class="masthead-line"></div>
+    </div>
+  </header>
+  <a href="../index.html" class="article-back">← Retour aux articles</a>
+  <article>
+    <div class="article-header reveal-section">
+      <div class="article-meta"><span class="article-meta-tag">Culture</span><span>—</span><span>012</span><span>—</span><span>5 min</span><span>—</span><span>Nina Voss</span></div>
+      <h2 class="article-title">Open source et design : une histoire d'amour compliquée</h2>
+      <p class="article-lead">Le mouvement open source a révolutionné le développement logiciel. Mais côté design, la collaboration ouverte se heurte à des obstacles profonds et souvent sous-estimés.</p>
+    </div>
+    <div class="article-body reveal-section">
+      <h2>Pourquoi le code s'est ouvert et pas le design</h2>
+      <p>Le code source est, par nature, textuel, versionnable, diffable. Git a été conçu pour la collaboration asynchrone sur du texte. Un fichier Figma ou Sketch, lui, est binaire, propriétaire, difficile à merger. Les workflows de contribution — pull request, review, merge — ne s'appliquent pas naturellement aux fichiers de design.</p>
+      <p>Il y a aussi une dimension culturelle. Les développeurs ont construit une culture de la contribution publique, du portfolio GitHub ouvert, du partage de snippets. La culture du design a longtemps valorisé la propriété intellectuelle, le portfolio fermé, le travail présenté comme entier et fini.</p>
+      <blockquote><p>« Un designer qui publie ses fichiers sources complets est encore perçu comme naïf. Un développeur qui ne publie pas son code est perçu comme méfiant. Ce n'est pas une question de technique, c'est une question de culture. »</p></blockquote>
+      <h2>Les tentatives qui fonctionnent (un peu)</h2>
+      <p>Des projets comme Penpot — alternative open source à Figma, pensée pour la collaboration — montrent qu'une autre voie est possible. Le format SVG qu'il utilise est ouvert et versionnable. Des systèmes de design complets sont publiés sur GitHub : Primer (GitHub), Carbon (IBM), Polaris (Shopify). Mais ils sont maintenus par des entreprises, pas par des communautés organiques comme Linux.</p>
+      <p>Côté typographie, le mouvement open source est plus avancé. Google Fonts, Adobe Fonts (pour la partie libre), et des fonderies comme Omnibus-Type ou Velvetyne distribuent des polices sous licences libres. La variable font Inter, open source, est utilisée partout sur le web.</p>
+      <h2>Ce que l'IA change à l'équation</h2>
+      <p>Les modèles d'IA génératifs sont entraînés sur des données publiques, incluant massivement du design "open source" ou simplement accessible. Cela a créé une tension nouvelle : des designers voient leur travail utilisé pour entraîner des systèmes qui les concurrencent, sans compensation ni attribution. La question du design ouvert est maintenant aussi une question d'éthique de l'IA.</p>
+    </div>
+  </article>
+  <footer class="site-footer"><div class="footer-bottom"><span>© 2025 TYPESET</span><span>Fait avec HTML, CSS & JS vanilla</span></div></footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){var d=document.getElementById('live-date');if(d)d.textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});});</script>
+</body>
+</html>

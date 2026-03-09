@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Variable Fonts : la typographie enfin vivante — TYPESET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <style>
+    .vf-demo {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 6vw, 5rem);
+      font-weight: 900;
+      text-align: center;
+      padding: 2rem;
+      border: 1.5px solid var(--color-border);
+      margin: 1.5rem 0;
+      background: var(--color-surface);
+      cursor: default;
+      transition: font-weight 0.3s ease;
+      user-select: none;
+    }
+    .vf-demo:hover { font-weight: 300; font-style: italic; }
+    .vf-label {
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--color-text-faint);
+      text-transform: uppercase;
+      margin-top: -1rem;
+      margin-bottom: 1.5rem;
+    }
+    .code-block {
+      background-color: var(--color-inverse-bg);
+      color: var(--color-inverse-text);
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      line-height: 1.7;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 3px solid var(--color-accent);
+      overflow-x: auto;
+      transition: background-color var(--transition-slow), color var(--transition-slow);
+    }
+  </style>
+</head>
+<body data-theme="light">
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-meta"><span class="header-date" id="live-date"></span><span class="header-issue">Vol. 01 — No. 24</span></div>
+      <div class="header-theme-toggle"><button class="theme-btn" id="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">◑</span></button></div>
+    </div>
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title"><a href="../index.html">TYPESET</a></h1>
+      <div class="masthead-line"></div>
+    </div>
+  </header>
+  <a href="../index.html" class="article-back">← Retour aux articles</a>
+  <article>
+    <div class="article-header reveal-section">
+      <div class="article-meta"><span class="article-meta-tag">Design</span><span>—</span><span>006</span><span>—</span><span>7 min</span><span>—</span><span>Emma Pascal</span></div>
+      <h2 class="article-title">Variable Fonts : la typographie enfin vivante</h2>
+      <p class="article-lead">Un seul fichier, mille variations. Les polices variables redéfinissent l'expression typographique sur le web et permettent des animations jusqu'ici impossibles.</p>
+    </div>
+    <div class="article-body reveal-section">
+      <h2>Le problème des polices traditionnelles</h2>
+      <p>Pendant des décennies, chaque graisse, chaque largeur, chaque style d'une police était un fichier séparé. Une famille typographique complète — Regular, Bold, Italic, Bold Italic, Light, Black — représentait six fichiers à télécharger. Sur mobile, cette accumulation de requêtes impactait directement les performances.</p>
+      <p>La variable font résout ce problème élégamment : un seul fichier contient l'intégralité des variations, encodées comme des axes continus. On ne choisit plus entre 400 et 700, on peut déclarer n'importe quelle valeur entre les deux.</p>
+
+      <div class="vf-demo">Aa — Survolez-moi</div>
+      <p class="vf-label">↑ Démo interactive — hover pour voir la variation de poids</p>
+
+      <h2>Les axes d'une variable font</h2>
+      <p>Les quatre axes enregistrés officiellement sont : le poids (<code>wght</code>), la largeur (<code>wdth</code>), l'inclinaison (<code>slnt</code>) et la taille optique (<code>opsz</code>). Mais certaines polices en définissent des personnalisés : épaisseur de trait, hauteur d'ascendantes, forme des terminaisons.</p>
+
+      <div class="code-block">/* Animer le poids au hover — CSS pur */<br>
+.titre {<br>
+&nbsp;&nbsp;font-variation-settings: 'wght' 900, 'wdth' 100;<br>
+&nbsp;&nbsp;transition: font-variation-settings 0.4s ease;<br>
+}<br><br>
+.titre:hover {<br>
+&nbsp;&nbsp;font-variation-settings: 'wght' 200, 'wdth' 125;<br>
+}
+      </div>
+
+      <h2>Animation et expressivité</h2>
+      <p>La vraie révolution est l'animation. Avant les variable fonts, animer une typographie signifiait des keyframes image par image ou des hacks SVG. Aujourd'hui, <code>font-variation-settings</code> peut être interpolé comme n'importe quelle propriété CSS. Un titre peut respirer, se contracter, répondre au scroll.</p>
+      <p>Des sites comme Framer, Linear ou Vercel exploitent déjà cette capacité pour des héros typographiques mémorables. C'est devenu un marqueur de qualité dans les portfolios créatifs.</p>
+
+      <h2>Performance et accessibilité</h2>
+      <p>Un fichier variable font est plus léger que l'ensemble des fichiers statiques équivalents. Le gain est réel sur les connexions lentes. Côté accessibilité, la taille optique (<code>opsz</code>) permet d'ajuster automatiquement les détails typographiques selon la taille d'affichage — plus de lisibilité aux petites tailles, plus de raffinement aux grandes.</p>
+      <p>En 2025, ne pas utiliser de variable fonts pour un projet qui se veut moderne est un choix difficile à justifier. Le support navigateur est universel, l'écosystème de polices variables est riche, et les bénéfices — performance, expressivité, accessibilité — sont cumulatifs.</p>
+    </div>
+  </article>
+  <footer class="site-footer"><div class="footer-bottom"><span>© 2025 TYPESET</span><span>Fait avec HTML, CSS & JS vanilla</span></div></footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){var d=document.getElementById('live-date');if(d)d.textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});});</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimalisme numérique : éloge de la contrainte — TYPESET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+</head>
+<body data-theme="light">
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-meta"><span class="header-date" id="live-date"></span><span class="header-issue">Vol. 01 — No. 24</span></div>
+      <div class="header-theme-toggle"><button class="theme-btn" id="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">◑</span></button></div>
+    </div>
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title"><a href="../index.html">TYPESET</a></h1>
+      <div class="masthead-line"></div>
+    </div>
+  </header>
+  <a href="../index.html" class="article-back">← Retour aux articles</a>
+  <article>
+    <div class="article-header reveal-section">
+      <div class="article-meta"><span class="article-meta-tag">Essai</span><span>—</span><span>005</span><span>—</span><span>5 min</span><span>—</span><span>Lucas Martin</span></div>
+      <h2 class="article-title">Minimalisme numérique : éloge de la contrainte</h2>
+      <p class="article-lead">Quand faire moins devient le plus grand défi créatif de notre époque. Plaidoyer pour une économie radicale des moyens dans un monde saturé de stimuli.</p>
+    </div>
+    <div class="article-body reveal-section">
+      <h2>Moins n'est pas rien</h2>
+      <p>Le minimalisme est souvent mal compris comme une esthétique du vide. Il n'est pas l'absence de décision — c'est la décision de tout supprimer sauf l'essentiel. Et identifier l'essentiel est le travail le plus difficile qui soit.</p>
+      <p>Apple sous Jobs en est l'exemple paradigmatique. Chaque produit résultait d'une accumulation de suppressions. Le bouton en moins, le port retiré, la forme simplifiée. Chaque absence était une décision, pas une omission.</p>
+      <blockquote><p>« La perfection est atteinte, non pas lorsqu'il n'y a plus rien à ajouter, mais lorsqu'il n'y a plus rien à retirer. » — Saint-Exupéry</p></blockquote>
+      <h2>La contrainte comme moteur créatif</h2>
+      <p>Les projets avec des contraintes strictes produisent souvent les solutions les plus innovantes. Twitter à 140 caractères a engendré une nouvelle forme d'écriture. La carte postale a inventé son propre genre littéraire. Le format 60 secondes de TikTok a révolutionné la narration vidéo.</p>
+      <p>La contrainte force la hiérarchie. Quand on ne peut pas tout montrer, on doit choisir ce qui compte. Ce choix est l'acte de design fondamental.</p>
+      <h2>Le minimalisme comme position éthique</h2>
+      <p>Au-delà de l'esthétique, le minimalisme numérique est une posture éthique dans un contexte d'économie de l'attention. Chaque élément rajouté à une interface est une demande faite à l'utilisateur : regarde ici, clique là, traite cette information.</p>
+      <p>Les interfaces surchargées ne sont pas seulement laides. Elles sont épuisantes. Le designer minimaliste fait le pari que le respect de l'attention est une valeur en soi — et que les utilisateurs le ressentent, même sans pouvoir l'exprimer.</p>
+      <h2>Ce que CSS 2025 apprend au minimaliste</h2>
+      <p>Ironiquement, les nouvelles fonctionnalités CSS poussent vers plus de minimalisme dans le code. Scroll-driven animations sans JS, container queries sans media query globale, cascade layers pour organiser sans surcharger. Faire plus avec moins — la définition même du minimalisme, appliquée à l'ingénierie frontend.</p>
+    </div>
+  </article>
+  <footer class="site-footer"><div class="footer-bottom"><span>© 2025 TYPESET</span><span>Fait avec HTML, CSS & JS vanilla</span></div></footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){var d=document.getElementById('live-date');if(d)d.textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});});</script>
+</body>
+</html>

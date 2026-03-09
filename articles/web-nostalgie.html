@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le web des années 2000 revient — TYPESET</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+</head>
+<body data-theme="light">
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-meta"><span class="header-date" id="live-date"></span><span class="header-issue">Vol. 01 — No. 24</span></div>
+      <div class="header-theme-toggle"><button class="theme-btn" id="theme-toggle" aria-label="Toggle theme"><span class="theme-icon">◑</span></button></div>
+    </div>
+    <div class="header-masthead">
+      <div class="masthead-line"></div>
+      <h1 class="masthead-title"><a href="../index.html">TYPESET</a></h1>
+      <div class="masthead-line"></div>
+    </div>
+  </header>
+  <a href="../index.html" class="article-back">← Retour aux articles</a>
+  <article>
+    <div class="article-header reveal-section">
+      <div class="article-meta"><span class="article-meta-tag">Culture</span><span>—</span><span>008</span><span>—</span><span>3 min</span><span>—</span><span>Nina Voss</span></div>
+      <h2 class="article-title">Le web des années 2000 revient et c'est voulu</h2>
+      <p class="article-lead">La nostalgie esthétique du web primitif s'impose comme tendance dans les portfolios des jeunes créatifs. Y2K numérique, curseurs personnalisés, guestbooks… Décryptage.</p>
+    </div>
+    <div class="article-body reveal-section">
+      <h2>Le Y2K numérique déferle sur les portfolios</h2>
+      <p>Ils sont nés avec l'iPhone mais choisissent des polices bitmap, des couleurs acides, des layouts en tableaux HTML qui semblent tout droit sortis de 2003. La génération Z redescouvre le web primitif avec les yeux de quelqu'un qui ne l'a jamais vécu — et cette distance crée une esthétique nouvelle, entre pastiche et sincérité.</p>
+      <p>Des studios comme Special.fish, Cargo Collective ou des centaines de portfolios sur Are.na embrassent ce retour. Ce n'est pas de l'incompétence technique. C'est un choix revendiqué, une façon de se distinguer de l'uniformité Figma-to-web de la production mainstream.</p>
+      <blockquote><p>« Nous sommes la première génération à avoir de la nostalgie pour quelque chose que nous n'avons pas vécu. C'est une nouvelle forme de fiction. »</p></blockquote>
+      <h2>Ce que la nostalgie révèle</h2>
+      <p>La fascination pour le web 1.0 dit quelque chose de précis sur le présent. Le web des origines était personnel, bricolé, explicitement imparfait. Chaque page sentait son auteur. La standardisation des plateformes — réseaux sociaux, CMS, templates — a effacé cette singularité au profit de l'efficacité.</p>
+      <p>Revenir aux marqueurs esthétiques de cette époque, c'est revendiquer l'authenticité et la singularité contre la plateformisation du web. C'est un geste politique autant qu'esthétique.</p>
+      <h2>La limite du pastiche</h2>
+      <p>Le danger est évident : la nostalgie peut devenir une prison esthétique. Les meilleurs de ces créatifs ne reproduisent pas le web 2000 — ils le réinterprètent avec les outils d'aujourd'hui. Curseurs CSS animés plutôt que GIFs, layouts CSS Grid qui "feignent" les tableaux, webfonts bitmap plutôt que vraies polices système.</p>
+      <p>La technique est moderne, l'esthétique est référentielle, le résultat est nouveau. C'est exactement ce que fait le bon design de toutes les époques.</p>
+    </div>
+  </article>
+  <footer class="site-footer"><div class="footer-bottom"><span>© 2025 TYPESET</span><span>Fait avec HTML, CSS & JS vanilla</span></div></footer>
+  <script src="../js/theme.js"></script>
+  <script src="../js/animations.js"></script>
+  <script>document.addEventListener('DOMContentLoaded',function(){var d=document.getElementById('live-date');if(d)d.textContent=new Date().toLocaleDateString('fr-FR',{weekday:'long',year:'numeric',month:'long',day:'numeric'});});</script>
+</body>
+</html>
